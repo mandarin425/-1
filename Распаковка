@@ -1,0 +1,19 @@
+# 1. Функция с параметрами по умолчанию
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
+
+# Вызовы функции
+print_params()                     # без аргументов
+print_params(b=25)                # только с измененным b
+print_params(c=[1, 2, 3])         # только с измененным c
+
+# 2. Распаковка параметров
+values_list = [10, 'привет', False]
+values_dict = {'a': 5, 'b': 'тест', 'c': None}
+
+print_params(*values_list)        # распаковка из списка
+print_params(**values_dict)       # распаковка из словаря
+
+# 3. Распаковка + отдельные параметры
+values_list_2 = [54.32, 'Строка']
+print_params(*values_list_2, 42)  # распаковка и добавление аргумента
